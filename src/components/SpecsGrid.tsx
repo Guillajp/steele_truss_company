@@ -1,12 +1,29 @@
+import { useState } from "react";
 import { motion } from "motion/react";
 import { ShieldCheck, Cpu, Ruler, Truck, Download, FileText } from "lucide-react";
+import EngineeringForm from "./EngineeringForm";
 
-const SPECS = [
+interface SpecItem {
+  icon: any;
+  title: string;
+  description: string;
+  spec: string;
+  link?: {
+    label: string;
+    url: string;
+  };
+}
+
+const SPECS: SpecItem[] = [
   {
     icon: Ruler,
     title: "Wood Roof Trusses",
     description: "Engineered for strength and precision. Our roof trusses are designed with easy-to-read layouts and profiles for fast, accurate installation.",
-    spec: "Serving: NY, VT, NH"
+    spec: "Serving: NY, VT, NH",
+    link: {
+      label: "TRUSS DESIGNS",
+      url: "/images/TRUSS DESIGNS.webp"
+    }
   },
   {
     icon: Ruler,
@@ -29,8 +46,11 @@ const SPECS = [
 ];
 
 export default function SpecsGrid() {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
   return (
     <section className="py-24 bg-white">
+      <EngineeringForm isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16">
           <h2 className="text-brand-orange font-black uppercase tracking-widest text-sm mb-4">Technical Excellence</h2>
@@ -58,6 +78,17 @@ export default function SpecsGrid() {
                 <span className="text-[10px] font-black uppercase tracking-widest text-brand-orange">
                   {spec.spec}
                 </span>
+                {spec.link && (
+                  <a
+                    href={spec.link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-brand-slate group-hover:text-white hover:text-brand-orange transition-colors"
+                  >
+                    <FileText className="w-3 h-3" />
+                    {spec.link.label}
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}
@@ -73,7 +104,10 @@ export default function SpecsGrid() {
               <p className="text-white/60 text-sm">Our in-house PE-stamped engineering team is ready to assist.</p>
             </div>
           </div>
-          <button className="bg-white text-brand-slate font-black px-8 py-4 uppercase tracking-widest hover:bg-brand-orange hover:text-white transition-colors">
+          <button 
+            onClick={() => setIsFormOpen(true)}
+            className="bg-white text-brand-slate font-black px-8 py-4 uppercase tracking-widest hover:bg-brand-orange hover:text-white transition-colors"
+          >
             Contact Engineering
           </button>
         </div>
