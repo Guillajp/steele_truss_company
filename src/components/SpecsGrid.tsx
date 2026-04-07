@@ -22,7 +22,7 @@ const SPECS: SpecItem[] = [
     spec: "Serving: NY, VT, NH",
     link: {
       label: "TRUSS DESIGNS",
-      url: "./images/TRUSS DESIGNS.JPG"
+      url: "./images/TRUSS_DESIGNS.JPG"
     }
   },
   {
