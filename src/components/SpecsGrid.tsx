@@ -19,7 +19,7 @@ const SPECS: SpecItem[] = [
     icon: Ruler,
     title: "Wood Roof Trusses",
     description: "Engineered for strength and precision. Our roof trusses are designed with easy-to-read layouts and profiles for fast, accurate installation.",
-    spec: "Serving: NY, VT, NH",
+    spec: "Serving: NY, VT, NH, and others",
     link: {
       label: "TRUSS DESIGNS",
       url: "./images/TRUSS_DESIGNS.JPG"
