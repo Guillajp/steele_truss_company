@@ -23,7 +23,7 @@ const PROJECTS = [
     id: 3,
     title: "Modern Dairy Facility",
     category: "Agricultural",
-    image: "/steele_truss_company/images/steel-truss.JPG",
+    image: "/steele_truss_company/images/steel-truss.jpg",
     stats: "15,000 Sq Ft • Clear-Span Design"
   },
   {
