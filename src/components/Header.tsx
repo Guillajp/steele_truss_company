@@ -4,10 +4,10 @@ import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/src/lib/utils";
 
 const NAV_CATEGORIES = [
-  { name: "Roof Trusses", href: "#roof-trusses" },
-  { name: "Floor Trusses", href: "#floor-trusses" },
-  { name: "Wall Panels", href: "#wall-panels" },
-  { name: "EWP", href: "#ewp" },
+//  { name: "Roof Trusses", href: "#roof-trusses" },
+//  { name: "Floor Trusses", href: "#floor-trusses" },
+//  { name: "Wall Panels", href: "#wall-panels" },
+//  { name: "EWP", href: "#ewp" },
 ];
 
 export default function Header() {
@@ -63,11 +63,11 @@ export default function Header() {
             <div className="flex flex-col items-end">
               <div className="flex items-center gap-2 text-white/70 text-xs font-bold uppercase tracking-tighter">
                 <Phone className="w-3 h-3 text-brand-orange" />
-                <span>518-569-5199</span>
+                <span>518-562-4663</span>
               </div>
               <div className="flex items-center gap-2 text-white/70 text-xs font-bold uppercase tracking-tighter">
                 <MapPin className="w-3 h-3 text-brand-orange" />
-                <span>Plattsburgh, NY</span>
+                <span>118 trade Road Plattsburgh NY 12901</span>
               </div>
             </div>
             <button className="bg-brand-orange hover:bg-orange-600 text-white font-black px-6 py-3 text-sm uppercase tracking-widest transition-all transform hover:scale-105 active:scale-95 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)]">
