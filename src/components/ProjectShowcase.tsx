@@ -7,9 +7,9 @@ const CATEGORIES = ["All", "Residential", "Commercial", "Agricultural"];
 const PROJECTS = [
   {
     id: 1,
-    title: "Luxury Hillside Estate",
+    title: "Complex multi-wing roof framing.",
     category: "Residential",
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800",
+    image: "/steele_truss_company/images/Image3.jpg",
     stats: "4,500 Sq Ft • Adirondack Custom Trusses"
   },
   {
@@ -28,23 +28,23 @@ const PROJECTS = [
   },
   {
     id: 4,
-    title: "Urban Apartment Complex",
+    title: "Modern urban steel superstructure.",
     category: "Commercial",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
+    image: "/steele_truss_company/images/Image4.jpg",
     stats: "85 Units • Wall Panels & EWP"
   },
   {
     id: 5,
-    title: "Mountain Retreat",
+    title: "Elegant timber frame vaulted ceiling.",
     category: "Residential",
-    image: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=800",
+    image: "/steele_truss_company/images/Image2.jpg",
     stats: "2,200 Sq Ft • Catskill Timber Design"
   },
   {
     id: 6,
-    title: "Equine Training Center",
+    title: "Clear-span steel agricultural pavilion",
     category: "Agricultural",
-    image: "https://images.unsplash.com/photo-1566241440091-ec10df8db2e1?auto=format&fit=crop&q=80&w=800",
+    image: "/steele_truss_company/images/Image1.jpg",
     stats: "25,000 Sq Ft • Scissor Trusses"
   }
 ];
