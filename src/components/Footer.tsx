@@ -40,9 +40,7 @@ export default function Footer() {
             <ul className="space-y-4 text-sm font-bold text-white/60">
               <li><a href="#" className="hover:text-white transition-colors">Roof Trusses</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Floor Trusses</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Wall Panels</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Engineered Wood (EWP)</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">I-Joists & LVL</a></li>
+              <li><a href="#" className="hover:text-white transition-colors
             </ul>
           </div>
 
@@ -65,7 +63,7 @@ export default function Footer() {
               </li>
               <li className="flex gap-3">
                 <Phone className="w-5 h-5 text-brand-orange flex-shrink-0" />
-                <span>518-569-5199</span>
+                <span>518-562-4663</span>
               </li>
               <li className="flex gap-3">
                 <Mail className="w-5 h-5 text-brand-orange flex-shrink-0" />
