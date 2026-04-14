@@ -36,7 +36,7 @@ export default function QuoteForm() {
             GET A QUICK QUOTE.
           </h3>
           <p className="text-slate-500 font-medium max-w-xl mx-auto">
-            Our engineering team typically provides a preliminary quote within 24-48 hours of blueprint submission.
+            Our engineering team typically provides a preliminary quote within 48-72 business hours of blueprint submission depending on completeness and compleity of submission.
           </p>
         </div>
 
