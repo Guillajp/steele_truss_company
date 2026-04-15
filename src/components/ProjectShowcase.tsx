@@ -30,7 +30,7 @@ const PROJECTS = [
     id: 4,
     title: "Modern urban steel superstructure.",
     category: "Commercial",
-    image: "/steele_truss_company/images/Image4.jpg",
+    image: "/steele_truss_company/images/steele_comm.jpg",
     stats: "85 Units • Wall Panels & EWP"
   },
   {
@@ -44,7 +44,7 @@ const PROJECTS = [
     id: 6,
     title: "Clear-span steel agricultural pavilion",
     category: "Agricultural",
-    image: "/steele_truss_company/images/Image1.jpg",
+    image: "/steele_truss_company/images/steele_ag.jpg",
     stats: "25,000 Sq Ft • Scissor Trusses"
   }
 ];
