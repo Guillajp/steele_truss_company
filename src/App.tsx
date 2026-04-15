@@ -1,8 +1,3 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
@@ -13,7 +8,7 @@ import FAQ from "./pages/FAQ";
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/steele_truss_company"> 
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
