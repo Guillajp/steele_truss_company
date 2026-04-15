@@ -47,7 +47,7 @@ export default function ServiceArea() {
               </div>
               <div>
                 <h4 className="font-black uppercase tracking-tight mb-1">Site-Ready</h4>
-                <p className="text-sm text-white/50">Precision placement on your slab.</p>
+                <p className="text-sm text-white/50">Delivered direct to your jobsite.</p>
               </div>
             </div>
           </div>
