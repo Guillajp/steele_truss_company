@@ -1,56 +1,14 @@
-import { MapPin, Truck, Clock, Shield, Cpu } from "lucide-react";
+import React from 'react';
 
 export default function ServiceArea() {
   return (
-    <section className="py-24 bg-brand-slate text-white overflow-hidden">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-brand-orange font-black uppercase tracking-widest text-sm mb-4">Logistics & Service</h2>
-          <h3 className="text-4xl md:text-5xl font-black tracking-tighter mb-8">
-            WE DELIVER WHERE YOU BUILD.
-          </h3>
-          <p className="text-white/60 text-lg mb-12 leading-relaxed max-w-2xl mx-auto">
-            Based in Plattsburgh, New York, we serve the Northeast with precision-engineered wood and steel components. Our fleet ensures on-time delivery across NY, VT, NH, and beyond.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-            <div className="flex gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-white/10 flex items-center justify-center rounded-sm border border-white/20">
-                <Truck className="w-6 h-6 text-brand-orange" />
-              </div>
-              <div>
-                <h4 className="font-black uppercase tracking-tight mb-1">Wood Products</h4>
-                <p className="text-sm text-white/50">Serving NY, VT, and NH for 35+ years.</p>
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-white/10 flex items-center justify-center rounded-sm border border-white/20">
-                <Cpu className="w-6 h-6 text-brand-orange" />
-              </div>
-              <div>
-                <h4 className="font-black uppercase tracking-tight mb-1">Steel Products</h4>
-                <p className="text-sm text-white/50">Serving NE, NY, NJ, and PA.</p>
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-white/10 flex items-center justify-center rounded-sm border border-white/20">
-                <MapPin className="w-6 h-6 text-brand-orange" />
-              </div>
-              <div>
-                <h4 className="font-black uppercase tracking-tight mb-1">Plattsburgh HQ</h4>
-                <p className="text-sm text-white/50">Manufacturing & Design Facility.</p>
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-white/10 flex items-center justify-center rounded-sm border border-white/20">
-                <Shield className="w-6 h-6 text-brand-orange" />
-              </div>
-              <div>
-                <h4 className="font-black uppercase tracking-tight mb-1">Site-Ready</h4>
-                <p className="text-sm text-white/50">Precision placement on your slab.</p>
-              </div>
-            </div>
-          </div>
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-brand-slate text-center border-t border-gray-800">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-3xl font-bold text-white mb-6">PROUDLY SERVING</h2>
+        <div className="flex flex-wrap justify-center gap-4 text-xl font-medium text-brand-orange">
+          <span className="bg-gray-900 px-6 py-3 rounded-full border border-gray-800">New York</span>
+          <span className="bg-gray-900 px-6 py-3 rounded-full border border-gray-800">Vermont</span>
+          <span className="bg-gray-900 px-6 py-3 rounded-full border border-gray-800">New Hampshire</span>
         </div>
       </div>
     </section>
