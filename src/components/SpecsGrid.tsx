@@ -21,10 +21,10 @@ const SPECS: SpecItem[] = [
     title: "Wood Roof Trusses",
     description: "Engineered for strength and precision. Our roof trusses are designed with easy-to-read layouts and profiles for fast, accurate installation.",
     spec: "Serving: NY, New England, and NJ",
-    image: "/images/TRUSS DESIGNS.webp",
+    image: "/steele_truss_company/images/truss_design.jpg",
     link: {
       label: "TRUSS DESIGNS",
-      url: "/images/TRUSS DESIGNS.webp"
+      url: "/steele_truss_company/images/truss_design.jpg"
     }
   },
   {
@@ -46,7 +46,7 @@ const SPECS: SpecItem[] = [
     title: "Cold-Formed Steel",
     description: "Light gauge steel wall panels and trusses manufactured with our laser jigging system for perfect quality control and sequence.",
     spec: "Serving: NY, New England, and NJ",
-    image: "/images/steel truss.JPG"
+    image: "/steele_truss_company/images/steel truss.JPG"
   }
 ];
 
