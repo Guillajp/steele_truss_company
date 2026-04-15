@@ -9,46 +9,45 @@ const PROJECTS = [
     id: 1,
     title: "Luxury Hillside Estate",
     category: "Residential",
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800",
+    image: "/steele_truss_company/images/timber_frame.jpg",
     stats: "4,500 Sq Ft • Adirondack Custom Trusses"
   },
   {
     id: 2,
-    title: "Regional Logistics Hub",
+    title: "Commerical Warehouse",
     category: "Commercial",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800",
+    image: "/steele_truss_company/images/steele_comm.jpg",
     stats: "120,000 Sq Ft • Long-Span Trusses"
   },
   {
     id: 3,
     title: "Modern Dairy Facility",
     category: "Agricultural",
-    image: "/images/steel truss.jpg",
+    image: "/steele_truss_company/images/steel truss.JPG", // Case-sensitive match
     stats: "15,000 Sq Ft • Clear-Span Design"
   },
   {
     id: 4,
-    title: "Urban Apartment Complex",
+    title: "Wide Span Large Commercial Project",
     category: "Commercial",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
-    stats: "85 Units • Wall Panels & EWP"
+    image: "/steele_truss_company/images/steel_truss_wide_span.jpg",
+    stats: "Clear Span commecial building"
   },
   {
     id: 5,
     title: "Mountain Retreat",
     category: "Residential",
-    image: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=800",
+    image: "/steele_truss_company/images/wood_truss_residential.jpg",
     stats: "2,200 Sq Ft • Catskill Timber Design"
   },
   {
     id: 6,
     title: "Equine Training Center",
     category: "Agricultural",
-    image: "https://images.unsplash.com/photo-1566241440091-ec10df8db2e1?auto=format&fit=crop&q=80&w=800",
+    image: "/steele_truss_company/images/steele_ag.jpg",
     stats: "25,000 Sq Ft • Scissor Trusses"
   }
 ];
-
 export default function ProjectShowcase() {
   const [activeCategory, setActiveCategory] = useState("All");
 
