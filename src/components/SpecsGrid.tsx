@@ -9,10 +9,8 @@ interface SpecItem {
   description: string;
   spec: string;
   image: string;
-  link?: {
-    label: string;
-    url: string;
-  };
+  link?: { label: string; url: string; };
+  link2?: { label: string; url: string; };
 }
 
 const SPECS: SpecItem[] = [
@@ -130,23 +128,39 @@ export default function SpecsGrid() {
                     <p className="text-sm text-slate-600 group-hover:text-white/70 mb-6 leading-relaxed">
                       {spec.description}
                     </p>
-                    <div className="flex flex-col gap-3 mt-auto">
-                      <span className="text-[10px] font-black uppercase tracking-widest text-brand-orange">
-                        {spec.spec}
-                      </span>
-                      {spec.link && (
-                        <a
-                          href={spec.link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                          className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-brand-slate group-hover:text-white hover:text-brand-orange transition-colors"
-                        >
-                          <FileText className="w-3 h-3" />
-                          {spec.link.label}
-                        </a>
-                      )}
-                    </div>
+                   <div className="flex flex-col gap-3 mt-auto">
+  <span className="text-[10px] font-black uppercase tracking-widest text-brand-orange">
+    {spec.spec}
+  </span>
+  
+  {/* First Link */}
+  {spec.link && (
+    <a
+      href={spec.link.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={(e) => e.stopPropagation()}
+      className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-brand-slate group-hover:text-white hover:text-brand-orange transition-colors"
+    >
+      <FileText className="w-3 h-3" />
+      {spec.link.label}
+    </a>
+  )}
+
+  {/* Second Link */}
+  {spec.link2 && (
+    <a
+      href={spec.link2.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={(e) => e.stopPropagation()}
+      className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-brand-slate group-hover:text-white hover:text-brand-orange transition-colors"
+    >
+      <FileText className="w-3 h-3" />
+      {spec.link2.label}
+    </a>
+  )}
+</div>
                   </motion.div>
                 ) : (
                   <motion.div
