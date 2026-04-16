@@ -45,7 +45,7 @@ const PROJECTS = [
     title: "Equine Training Center",
     category: "Agricultural",
     image: "/steele_truss_company/images/steele_ag.jpg",
-    stats: "25,000 Sq Ft • Scissor Trusses"
+    stats: "25,000 Sq Ft • Long clearspan trusses"
   }
 ];
 export default function ProjectShowcase() {
