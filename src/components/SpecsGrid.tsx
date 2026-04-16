@@ -32,21 +32,21 @@ const SPECS: SpecItem[] = [
     title: "Wood Floor Trusses",
     description: "Open-web designs that allow for easy plumbing and electrical routing. Engineered to be the most affordable and time-saving in the industry.",
     spec: "Serving: NY, New England, and NJ",
-    image: "https://images.unsplash.com/photo-1513584684374-8bdb74838a0f?auto=format&fit=crop&q=80&w=800"
+    image: "/steele_truss_company/images/floor_truss.jpg"
   },
   {
     icon: ShieldCheck,
     title: "Wood Wall Panels",
     description: "Shorten schedules and reduce waste. Pre-fabricated in a controlled environment to ensure your construction is square, nailed, and sheathed consistently.",
     spec: "Serving: NY, New England, and NJ",
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800"
+    image: "/steele_truss_company/images/wall_panel.jpg"
   },
   {
     icon: Cpu,
     title: "Cold-Formed Steel",
     description: "Light gauge steel wall panels and trusses manufactured with our laser jigging system for perfect quality control and sequence.",
     spec: "Serving: NY, New England, and NJ",
-    image: "/steele_truss_company/images/steel truss.JPG"
+    image: "/steele_truss_company/images/steele_ag.jpg"
   }
 ];
 
