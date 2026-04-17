@@ -24,7 +24,7 @@ const SPECS: SpecItem[] = [
     label: "TRUSS DESIGNS",
     url: "/steele_truss_company/images/truss_design.jpg"
   },
-  link2: { // Add this new block
+  link2: {
     label: "Wood Truss Bracing Design",
     url: "/steele_truss_company/images/wood_truss_bracing_design.pdf"
     }
@@ -41,7 +41,11 @@ const SPECS: SpecItem[] = [
     title: "Wood Wall Panels",
     description: "Shorten schedules and reduce waste. Pre-fabricated in a controlled environment to ensure your construction is square, nailed, and sheathed consistently.",
     spec: "Serving: NY, New England, and NJ",
-    image: "/steele_truss_company/images/wall_panel.jpg"
+    image: "/steele_truss_company/images/wall_truss_build.jpg",
+     link: {
+    label: "Sample wall panel design",
+    url: "/steele_truss_company/images/sample_wall_panel_drawing.jpg"
+  },
   },
   {
     icon: Cpu,
