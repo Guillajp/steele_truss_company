@@ -44,7 +44,7 @@ const SPECS: SpecItem[] = [
     image: "/steele_truss_company/images/wall_truss_build.jpg",
      link: {
     label: "Sample wall panel design",
-    url: "/steele_truss_company/images/sample_wall_panel_drawing.jpg"
+    url: "/steele_truss_company/images/sample_wall_panel_drawing.pdf"
   },
   },
   {
