@@ -12,7 +12,7 @@ export default function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/steele_truss_company/images/hero_background.jpg"
+          src="/steele_truss_company/images/steele_truss_building.jpg"
           alt="Upstate NY Construction"
           className="w-full h-full object-cover opacity-40"
           referrerPolicy="no-referrer"
