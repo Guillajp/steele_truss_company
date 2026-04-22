@@ -8,7 +8,7 @@ import FAQ from "./pages/FAQ";
 
 export default function App() {
   return (
-    <Router basename="/steele_truss_company"> 
+    <Router basename="/"> 
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
