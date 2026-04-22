@@ -9,7 +9,7 @@ const PROJECTS = [
     id: 1,
     title: "Luxury Hillside Estate",
     category: "Residential",
-    image: "/steele_truss_company/images/timber_frame.jpg",
+    image: "/images/timber_frame.jpg",
     stats: "4,500 Sq Ft • Adirondack Custom Trusses"
   },
   {
