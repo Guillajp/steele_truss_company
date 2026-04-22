@@ -16,35 +16,35 @@ const PROJECTS = [
     id: 2,
     title: "Commerical Warehouse",
     category: "Commercial",
-    image: "/steele_truss_company/images/steele_comm.jpg",
+    image: "/images/steele_comm.jpg",
     stats: "120,000 Sq Ft • Long-Span Trusses"
   },
   {
     id: 3,
     title: "Modern Dairy Facility",
     category: "Agricultural",
-    image: "/steele_truss_company/images/clear_span_truss.jpg",
+    image: "/images/clear_span_truss.jpg",
     stats: "15,000 Sq Ft • Clear-Span Design"
   },
   {
     id: 4,
     title: "Wide Span Large Commercial Project",
     category: "Commercial",
-    image: "/steele_truss_company/images/steel_truss_wide_span.jpg",
+    image: "/images/steel_truss_wide_span.jpg",
     stats: "Clear Span commecial building"
   },
   {
     id: 5,
     title: "Mountain Retreat",
     category: "Residential",
-    image: "/steele_truss_company/images/wood_truss_residential.jpg",
+    image: "/images/wood_truss_residential.jpg",
     stats: "2,200 Sq Ft • Catskill Timber Design"
   },
   {
     id: 6,
     title: "Equine Training Center",
     category: "Agricultural",
-    image: "/steele_truss_company/images/steele_ag.jpg",
+    image: "/images/steele_ag.jpg",
     stats: "25,000 Sq Ft • Long clearspan trusses"
   }
 ];
