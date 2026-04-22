@@ -19,14 +19,14 @@ const SPECS: SpecItem[] = [
   title: "Wood Roof Trusses",
   description: "Engineered for strength and precision...",
   spec: "Serving: NY, New England, and NJ",
-  image: "/steele_truss_company/images/truss_design.jpg",
+  image: "/images/truss_design.jpg",
   link: {
     label: "TRUSS DESIGNS",
-    url: "/steele_truss_company/images/truss_design.jpg"
+    url: "/images/truss_design.jpg"
   },
   link2: {
     label: "Wood Truss Bracing Design",
-    url: "/steele_truss_company/images/wood_truss_bracing_design.pdf"
+    url: "/images/wood_truss_bracing_design.pdf"
     }
   },
   {
@@ -34,17 +34,17 @@ const SPECS: SpecItem[] = [
     title: "Wood Floor Trusses",
     description: "Open-web designs that allow for easy plumbing and electrical routing. Engineered to be the most affordable and time-saving in the industry.",
     spec: "Serving: NY, New England, and NJ",
-    image: "/steele_truss_company/images/floor_truss.jpg"
+    image: "/images/floor_truss.jpg"
   },
   {
     icon: ShieldCheck,
     title: "Wood Wall Panels",
     description: "Shorten schedules and reduce waste. Pre-fabricated in a controlled environment to ensure your construction is square, nailed, and sheathed consistently.",
     spec: "Serving: NY, New England, and NJ",
-    image: "/steele_truss_company/images/wall_truss_build.jpg",
+    image: "/images/wall_truss_build.jpg",
      link: {
     label: "Sample wall panel design",
-    url: "/steele_truss_company/images/sample_wall_panel_drawing.pdf"
+    url: "/images/sample_wall_panel_drawing.pdf"
   },
   },
   {
@@ -52,7 +52,7 @@ const SPECS: SpecItem[] = [
     title: "Cold-Formed Steel",
     description: "Light gauge steel wall panels and trusses manufactured with our laser jigging system for perfect quality control and sequence.",
     spec: "Serving: NY, New England, and NJ",
-    image: "/steele_truss_company/images/steel_truss_wide_span.jpg"
+    image: "/images/steel_truss_wide_span.jpg"
   }
 ];
 
