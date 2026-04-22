@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { X, Send, CheckCircle } from "lucide-react";
+import { X, Send, CheckCircle, Loader2 } from "lucide-react";
 
 interface EngineeringFormProps {
   isOpen: boolean;
@@ -8,15 +8,44 @@ interface EngineeringFormProps {
 }
 
 export default function EngineeringForm({ isOpen, onClose }: EngineeringFormProps) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [serverError, setServerError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      onClose();
-    }, 3000);
+    setIsSubmitting(true);
+    setServerError(null);
+
+    const formElement = e.currentTarget;
+    const formData = new FormData(formElement);
+
+    try {
+      const response = await fetch("https://formspree.io/f/meevpevv", {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        // Optional: Keep the success message visible for a few seconds before closing
+        setTimeout(() => {
+          setIsSubmitted(false);
+          onClose();
+          formElement.reset();
+        }, 4000);
+      } else {
+        const data = await response.json();
+        setServerError(data.error || "Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      setServerError("Network error. Please check your connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -67,11 +96,18 @@ export default function EngineeringForm({ isOpen, onClose }: EngineeringFormProp
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    {serverError && (
+                      <div className="p-4 bg-red-50 text-red-600 text-xs font-bold uppercase tracking-widest border-l-4 border-red-600">
+                        {serverError}
+                      </div>
+                    )}
+                    
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <label className="text-[10px] font-black uppercase tracking-widest text-slate-500">First Name</label>
                         <input 
                           required
+                          name="firstName"
                           type="text" 
                           className="w-full bg-brand-grey border-2 border-transparent p-4 font-bold focus:border-brand-orange outline-none transition-all"
                           placeholder="John"
@@ -81,6 +117,7 @@ export default function EngineeringForm({ isOpen, onClose }: EngineeringFormProp
                         <label className="text-[10px] font-black uppercase tracking-widest text-slate-500">Last Name</label>
                         <input 
                           required
+                          name="lastName"
                           type="text" 
                           className="w-full bg-brand-grey border-2 border-transparent p-4 font-bold focus:border-brand-orange outline-none transition-all"
                           placeholder="Doe"
@@ -93,6 +130,7 @@ export default function EngineeringForm({ isOpen, onClose }: EngineeringFormProp
                         <label className="text-[10px] font-black uppercase tracking-widest text-slate-500">Phone Number</label>
                         <input 
                           required
+                          name="phone"
                           type="tel" 
                           className="w-full bg-brand-grey border-2 border-transparent p-4 font-bold focus:border-brand-orange outline-none transition-all"
                           placeholder="(555) 000-0000"
@@ -102,6 +140,7 @@ export default function EngineeringForm({ isOpen, onClose }: EngineeringFormProp
                         <label className="text-[10px] font-black uppercase tracking-widest text-slate-500">Project Location</label>
                         <input 
                           required
+                          name="location"
                           type="text" 
                           className="w-full bg-brand-grey border-2 border-transparent p-4 font-bold focus:border-brand-orange outline-none transition-all"
                           placeholder="City, State"
@@ -113,6 +152,7 @@ export default function EngineeringForm({ isOpen, onClose }: EngineeringFormProp
                       <label className="text-[10px] font-black uppercase tracking-widest text-slate-500">Project Needs</label>
                       <textarea 
                         required
+                        name="needs"
                         rows={4}
                         className="w-full bg-brand-grey border-2 border-transparent p-4 font-bold focus:border-brand-orange outline-none transition-all resize-none"
                         placeholder="Please describe your technical requirements, truss spans, or specific engineering challenges..."
@@ -121,10 +161,20 @@ export default function EngineeringForm({ isOpen, onClose }: EngineeringFormProp
 
                     <button 
                       type="submit"
-                      className="w-full bg-brand-slate text-white font-black py-5 uppercase tracking-widest flex items-center justify-center gap-3 hover:bg-brand-orange transition-all group"
+                      disabled={isSubmitting}
+                      className="w-full bg-brand-slate text-white font-black py-5 uppercase tracking-widest flex items-center justify-center gap-3 hover:bg-brand-orange transition-all group disabled:opacity-50"
                     >
-                      Send Request
-                      <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                      {isSubmitting ? (
+                        <>
+                          Sending...
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                        </>
+                      ) : (
+                        <>
+                          Send Request
+                          <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                        </>
+                      )}
                     </button>
                   </form>
                 </>
