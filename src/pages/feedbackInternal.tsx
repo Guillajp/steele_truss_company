@@ -1,14 +1,42 @@
 import { motion } from "motion/react";
-import { MessageSquare, Send, Star } from "lucide-react";
+import { MessageSquare, Send, Loader2 } from "lucide-react";
 import { useState } from "react";
 
 export default function FeedbackInternal() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [serverError, setServerError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Logic to send to your backend or email service goes here
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setServerError(null);
+
+    const formElement = e.currentTarget;
+    const formData = new FormData(formElement);
+
+    try {
+      // Using your existing Formspree endpoint
+      const response = await fetch("https://formspree.io/f/meevpevv", {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        formElement.reset();
+      } else {
+        const data = await response.json();
+        setServerError(data.error || "Form submission failed. Please try again.");
+      }
+    } catch (err) {
+      setServerError("Network error. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -58,26 +86,60 @@ export default function FeedbackInternal() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-xs font-black uppercase tracking-widest text-brand-slate mb-2">Full Name</label>
-                  <input type="text" required className="w-full bg-slate-50 border-none p-4 focus:ring-2 focus:ring-brand-orange transition-all" />
+                  <input 
+                    name="name"
+                    type="text" 
+                    required 
+                    className="w-full bg-slate-50 border-none p-4 focus:ring-2 focus:ring-brand-orange transition-all text-brand-slate" 
+                  />
                 </div>
                 <div>
                   <label className="block text-xs font-black uppercase tracking-widest text-brand-slate mb-2">Project Number (Optional)</label>
-                  <input type="text" className="w-full bg-slate-50 border-none p-4 focus:ring-2 focus:ring-brand-orange transition-all" />
+                  <input 
+                    name="project_number"
+                    type="text" 
+                    className="w-full bg-slate-50 border-none p-4 focus:ring-2 focus:ring-brand-orange transition-all text-brand-slate" 
+                  />
                 </div>
               </div>
 
               <div>
                 <label className="block text-xs font-black uppercase tracking-widest text-brand-slate mb-2">What could we have done better?</label>
-                <textarea rows={5} required className="w-full bg-slate-50 border-none p-4 focus:ring-2 focus:ring-brand-orange transition-all" />
+                <textarea 
+                  name="message"
+                  rows={5} 
+                  required 
+                  className="w-full bg-slate-50 border-none p-4 focus:ring-2 focus:ring-brand-orange transition-all text-brand-slate" 
+                />
               </div>
+
+              {serverError && (
+                <div className="p-4 bg-red-50 text-red-600 text-sm font-bold uppercase tracking-tight">
+                  {serverError}
+                </div>
+              )}
 
               <div className="flex items-center gap-4 p-4 bg-brand-slate/5 rounded-sm">
                 <MessageSquare className="w-6 h-6 text-brand-orange" />
                 <p className="text-sm font-bold text-brand-slate uppercase">This goes directly to our project managers.</p>
               </div>
 
-              <button type="submit" className="w-full bg-brand-slate hover:bg-brand-orange text-white font-black py-5 uppercase tracking-widest transition-colors duration-300">
-                Submit Feedback
+              <button 
+                type="submit" 
+                disabled={isSubmitting}
+                className="w-full bg-brand-slate hover:bg-brand-orange text-white font-black py-5 uppercase tracking-widest transition-colors duration-300 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    Submit Feedback
+                    <Send className="w-5 h-5" />
+                  </>
+                )}
               </button>
             </form>
           </div>
