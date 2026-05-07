@@ -5,6 +5,7 @@ import RoofTrusses from "./pages/RoofTrusses";
 import FloorTrusses from "./pages/FloorTrusses";
 import WallPanels from "./pages/WallPanels";
 import FAQ from "./pages/FAQ";
+import FeedbackInternal from "./pages/feedbackInternal";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="/floor-trusses" element={<FloorTrusses />} />
           <Route path="/wall-panels" element={<WallPanels />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/satisfaction-survey" element={<FeedbackInternal />} />
         </Routes>
       </Layout>
     </Router>
